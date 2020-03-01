@@ -26,3 +26,9 @@ function addRandomQuote() {
   const quotesContainer = document.getElementById('quote-container');
   quotesContainer.innerText = quote;
 }
+// fetch message
+async function getMessage() {
+  const response = await fetch('/data');
+  const message = await response.text();
+  document.getElementById('message-container').innerText = "This is a message worthy of getting";
+}
