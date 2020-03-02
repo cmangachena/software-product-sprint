@@ -28,7 +28,11 @@ function addRandomQuote() {
 }
 // fetch message
 async function getMessage() {
-  const response = await fetch('/data');
-  const message = await response.text();
-  document.getElementById('message-container').innerText = "This is a message worthy of getting";
+  fetch('/index')  // sends a request to /my-data-url
+.then(response => response.json()) // parses the response as JSON
+.then((messages) => { // now we can reference the fields in myObject!
+  console.log(messages.0);
+  console.log(messages.1);
+  console.log(messages.2);
+});
 }
