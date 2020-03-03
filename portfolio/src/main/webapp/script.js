@@ -28,11 +28,11 @@ function addRandomQuote() {
 }
 // fetch message
 async function getMessage() {
-  fetch('/index')  // sends a request to /my-data-url
+  fetch('/data')  // sends a request to /my-data-url
 .then(response => response.json()) // parses the response as JSON
 .then((messages) => { // now we can reference the fields in myObject!
-  console.log(messages.0);
-  console.log(messages.1);
-  console.log(messages.2);
+  console.log(messages.get(0));
+  console.log(messages.get(1));
+  console.log(messages.get(2));
 });
 }
